@@ -1,22 +1,20 @@
 import React from 'react';
-import pulsar from '../App';
-function Tecla(pulsar) {
+function Tecla({funcionaEnviar}) { 
     const tecladoStyle = {
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '10px',
+        width:'100%',
     };
 
     const botonStyle = (color) => ({
         color: 'white',
         backgroundColor: color,
-        border: 'none',
-        borderRadius: '50%',
-        padding: '20px',
+        border: '1px solid black',
         fontSize: '24px',
         cursor: 'pointer',
         textAlign: 'center',
         fontFamily: 'Arial, sans-serif',
+        width: '100%',
     });
 
     const botones = [
@@ -27,13 +25,12 @@ function Tecla(pulsar) {
     ];
 
     return (
-        <div style={tecladoStyle}>
+        <div style={tecladoStyle} className='col-6'>
             {botones.map(boton => (
                 <button
                     key={boton.label}
                     style={botonStyle(boton.color)}
-                    onClick={() => pulsar(boton.label)}
-                >
+                    onClick={() => funcionaEnviar(boton.label)}>
                     {boton.label}
                 </button>
             ))}
