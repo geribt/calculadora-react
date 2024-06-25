@@ -7,6 +7,7 @@ import './App.css'
 
 function App() {
   const [display, setDisplay] = useState(0);
+  const [operacion, setOperacion] = useState(null);
   const [valorAnterior, setValorAnterior] = useState(0);
 
   function borrarDisplay(){
